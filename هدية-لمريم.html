@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هدية لمريم حديد | من القلب</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #d47fa6; /* لون زهري ناعم */
+            --secondary: #8e5a78; /* لون بنفسجي غامق */
+            --accent: #ffd700; /* لون ذهبي */
+            --light: #fff8fb;
+            --dark: #4a2c40;
+            --engineer: #4caf50; /* لون المهندس */
+        }
+        
+        body {
+            background: linear-gradient(135deg, #fff8fb 0%, #ffeef7 100%);
+            color: var(--dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        /* تصميم الزهور العائمة */
+        .flower {
+            position: absolute;
+            font-size: 1.5rem;
+            opacity: 0.7;
+            z-index: -1;
+            animation: float 8s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+        
+        /* الهيدر */
+        header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: 3.8rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            font-size: 1.7rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        
+        /* الأقسام */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--secondary);
+            display: inline-block;
+            padding: 0 1.5rem;
+            background: var(--light);
+            position: relative;
+            z-index: 2;
+            font-weight: 600;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--primary), transparent);
+            z-index: 1;
+        }
+        
+        /* كروت الاقتباسات */
+        .quote-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+        }
+        
+        .quote-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+            transition: transform 0.4s, box-shadow 0.4s;
+            position: relative;
+            border: 1px solid rgba(210, 127, 166, 0.25);
+        }
+        
+        .quote-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 18px 45px rgba(0,0,0,0.15);
+        }
+        
+        .card-header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.8rem;
+            text-align: center;
+        }
+        
+        .card-header h3 {
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+        
+        .card-body {
+            padding: 2.5rem;
+            font-size: 1.25rem;
+            position: relative;
+            line-height: 1.9;
+        }
+        
+        .card-body::before {
+            content: """;
+            font-size: 6rem;
+            position: absolute;
+            top: -30px;
+            left: 15px;
+            opacity: 0.1;
+            color: var(--secondary);
+            font-family: serif;
+        }
+        
+        /* القسم الشخصي */
+        .personal-message {
+            background: linear-gradient(135deg, #8e5a78 0%, #4a2c40 100%);
+            color: white;
+            border-radius: 25px;
+            padding: 4rem;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            margin: 5rem auto;
+            max-width: 850px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .personal-message::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.1;
+        }
+        
+        .personal-message h3 {
+            font-size: 2.5rem;
+            margin-bottom: 2.5rem;
+            color: var(--accent);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .personal-message p {
+            font-size: 1.4rem;
+            line-height: 1.9;
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* الفوتر */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 3.5rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hearts {
+            color: var(--primary);
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .engineer-signature {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .engineer-signature .name {
+            color: var(--engineer);
+            font-weight: bold;
+            position: relative;
+            padding: 0 10px;
+        }
+        
+        .engineer-signature .name::before,
+        .engineer-signature .name::after {
+            content: "•";
+            position: absolute;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 1.2rem;
+        }
+        
+        .engineer-signature .name::before {
+            left: -5px;
+        }
+        
+        .engineer-signature .name::after {
+            right: -5px;
+        }
+        
+        /* التخصيص للجوال */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8rem; }
+            .subtitle { font-size: 1.4rem; }
+            .section-title h2 { font-size: 2.3rem; }
+            section { padding: 3.5rem 1.5rem; }
+            .card-body { padding: 1.8rem; font-size: 1.1rem; }
+            .personal-message { padding: 2.5rem; }
+            .personal-message p { font-size: 1.2rem; }
+        }
+        
+        @media (max-width: 480px) {
+            h1 { font-size: 2.3rem; }
+            .subtitle { font-size: 1.2rem; }
+            .section-title h2 { font-size: 1.9rem; }
+            .card-header h3 { font-size: 1.5rem; }
+            .card-body { padding: 1.5rem; }
+            .engineer-signature {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- زهور عائمة -->
+    <div class="flower" style="top: 10%; left: 5%;">🌸</div>
+    <div class="flower" style="top: 20%; right: 7%;">🌼</div>
+    <div class="flower" style="top: 50%; left: 3%;">🌺</div>
+    <div class="flower" style="bottom: 20%; right: 10%;">🌹</div>
+    
+    <header>
+        <div class="header-content">
+            <h1>مَرْيَمْ حَدِيد</h1>
+            <p class="subtitle">هدية رقمية من القلب، كلمات تُضيء دربكِ في رحلة الحياة</p>
+        </div>
+    </header>
+    
+    <!-- قسم الدراسة -->
+    <section id="study">
+        <div class="section-title">
+            <h2><i class="fas fa-book-open"></i> نُورُ العِلْمِ</h2>
+        </div>
+        
+        <div class="quote-cards">
+            <div class="quote-card">
+                <div class="card-header">
+                    <h3>حَفِظْتِ.. فَأَشْرَقْتِ</h3>
+                </div>
+                <div class="card-body">
+                    "لا تَخْفِ مِنْ صُعُوبَةِ الطَّرِيقِ، فَكُلُّ كَلِمَةٍ تَتَعَلَّمِينَهَا هِيَ لَبِنَةٌ تَبْنِي بِهَا قُصُورَ أَحْلَامِكِ. الأَجْهَزَةُ تَتْعَبُ، وَالكُتُبُ تَثْقُلُ، لَكِنَّ عُقُولَ العُظَمَاءِ تُنِيرُهَا مَصَابِيحُ المَعْرِفَةِ."
+                </div>
+            </div>
+            
+            <div class="quote-card">
+                <div class="card-header">
+                    <h3>اجْتِهَادٌ يُزْهِرُ</h3>
+                </div>
+                <div class="card-body">
+                    "رَائِحَةُ العَرَقِ فِي سَاعَاتِ الدِّرَاسَةِ أَعْذَبُ مِنْ عَبِيرِ أَزْهَارِ الرَّبِيعِ، لأَنَّهَا رَائِحَةُ المُسْتَقْبَلِ يَتَشَكَّلُ. صَبْرًا يَا جَمِيلَة، فَالنَّجَاحُ حَصَادُ صَبْرٍ."
+                </div>
+            </div>
+            
+            <div class="quote-card">
+                <div class="card-header">
+                    <h3>نَفَسُ النَّجَاحِ</h3>
+                </div>
+                <div class="card-body">
+                    "لَيْسَ المَهَمُّ مَدَى سُرْعَتِكِ، بَلْ أَنْ تَسْتَمِرِّي فِي المَسِيرِ. كُلُّ اخْتِبَارٍ هُوَ جُرْعَةٌ مِنَ التَّجْرِبَةِ، وَكُلُّ تَجْرِبَةٍ هِيَ خُطْوَةٌ تَقْرُبُكِ مِنَ القِمَّةِ."
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم الدنيا -->
+    <section id="life">
+        <div class="section-title">
+            <h2><i class="fas fa-heart"></i> رِحْلَةُ الحَيَاةِ</h2>
+        </div>
+        
+        <div class="quote-cards">
+            <div class="quote-card">
+                <div class="card-header">
+                    <h3>بَصْمَتُكِ الفَرِيدَة</h3>
+                </div>
+                <div class="card-body">
+                    "لَا تَقْلِقِي لِأَجْلِ مَا تَفْقِدِينَهُ، فَالدُّنْيَا تَمْتَلِئُ بِالْفُرَصِ الَّتِي تَنْتَظِرُ بَصْمَتَكِ الفَرِيدَةَ. أَنْتِ لَيْسَتْ مُجَرَّدَ وَاحِدَةٍ مِنَ الجُمْهُورِ، بَلْ كَوْكَبٌ مُتَأَلِّقٌ بِضَوْئِهِ الخَاصِّ."
+                </div>
+            </div>
+            
+            <div class="quote-card">
+                <div class="card-header">
+                    <h3>شُهُودُ الجَمَالِ</h3>
+                </div>
+                <div class="card-body">
+                    "تَعَلَّمِي أَنْ تَرَيْ الجَمَالَ فِي الأَشْيَاءِ البَسِيطَةِ: فِي شَمْسٍ تُشْرِقُ، وَنَبَاتٍ يَخْرُجُ مِنَ الأَرْضِ، وَبَسْمَةٍ تَلْتَقِطِيهَا فِي طَرِيقِكِ. السَّعَادَةُ لَيْسَتْ مَكَانًا تَصِلِينَ إلَيْهِ، بَلْ طَرِيقَةٌ تَسِيرِينَ بِهَا."
+                </div>
+            </div>
+            
+            <div class="quote-card">
+                <div class="card-header">
+                    <h3>أَنْتِ النَّجْمَةُ</h3>
+                </div>
+                <div class="card-body">
+                    "فِي كُلِّ يَوْمٍ جَدِيدٍ، تَخْطِينَ خُطْوَةً أَقْرَبَ نَحْوَ نُجُومِكِ. لَا تَنْظُرِي إلَى الخَلْفِ إلَّا لِتَرَى مَسَافَةَ الإِنْجَازِ، وَلَا تَنْظُرِي إلَى الأَمَامِ إلَّا لِتَرَى بَرِيقَ أَحْلَامِكِ."
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم الصبر -->
+    <section id="patience">
+        <div class="section-title">
+            <h2><i class="fas fa-hourglass-half"></i> زَهْرَةُ الصَّبْرِ</h2>
+        </div>
+        
+        <div class="quote-cards">
+            <div class="quote-card">
+                <div class="card-header">
+                    <h3>صَبْرٌ مُزْهِرٌ</h3>
+                </div>
+                <div class="card-body">
+                    "الصَّبْرُ لَيْسَ انْكِسَارًا بَلْ قُوَّةٌ تَخْتَبِئُ فِي رِقَّةٍ. مِثْلَ الزَّهْرَةِ الَّتِي تَشُقُّ الأَرْضَ لِتُبْهِرَ العَالَمَ بِنُورِهَا، سَتَخْرُجِينَ مِنْ تَجَارِبِكِ أَقْوَى وَأَجْمَلَ."
+                </div>
+            </div>
+            
+            <div class="quote-card">
+                <div class="card-header">
+                    <h3>دُرُورِ الوَقْتِ</h3>
+                </div>
+                <div class="card-body">
+                    "لَا تَسْتَعْجِلِي الحُلُولَ، فَالْحَيَاةُ تَصْنَعُكِ قِطَعَةً قِطَعَةً، كَاللَّوْحَةِ الفَنِيَّةِ الَّتِي تَأْخُذُ وَقْتِهَا لِتَكْتَمِلَ. الثِّقَةُ بِاللهِ ثُمَّ بِالوَقْتِ مِنْ أَجْمَلِ هَدَايَا الحِكْمَةِ."
+                </div>
+            </div>
+            
+            <div class="quote-card">
+                <div class="card-header">
+                    <h3>رِحْلَةُ الأَلْفِ مِيلٍ</h3>
+                </div>
+                <div class="card-body">
+                    "لَنْ تَصِلَ القِمَّةَ إلَّا بَعْدَ أَلْفِ خُطْوَةٍ، وَلَنْ تَحْصُلَ عَلَى العَسَلِ إلَّا بَعْدَ اجْتِيَازِ أَلْفِ زَهْرَةٍ. كُلُّ خُطْوَةٍ تَخْطِيهَا هِيَ نُقْطَةُ ضَوْءٍ فِي طَرِيقِ نَجَاحِكِ."
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- رسالة شخصية -->
+    <div class="personal-message">
+        <h3><i class="fas fa-envelope"></i> رِسَالَةٌ مِنْ قَلْبٍ</h3>
+        <p>مَرْيَمْ..<br>
+        كُلُّ كَلِمَةٍ فِي هَذَا المَكَانِ صُورَةٌ مِنْ جَمَالِ رُوحِكِ،<br>
+        وَكُلُّ حَرْفٍ هُوَ شُمْعَةٌ أَرْسُلُهَا لِتُضِيءَ دَرْبَكِ.<br>
+        أَعْرِفُ أَنَّ فِيكِ قُوَّةَ الجِبَالِ، وَلُطْفَ الأَنْهَارِ، وَحِكْمَةَ السَّنِينَ.<br>
+        لَنْ تَعْجِزِي، وَلَنْ تَخْذُلِي، وَلَنْ تَكُونِي غَيْرَ الرَّائِعَةِ الَّتِي تَعْرِفُهَا نَفْسُكِ.<br>
+        أَقْبَلِي عَلَى حَيَاتِكِ بِبَسَامَةٍ، فَأَنْتِ أَهْلٌ لِكُلِّ خَيْرٍ.</p>
+    </div>
+    
+    <footer>
+        <p>صُنِعَ بِـ <span class="hearts">♥</span> لِـ <span style="color: var(--accent)">مَرْيَمْ حَدِيد</span></p>
+        <p>هدية رقمية تبقى معكِ أينما حللتِ</p>
+        
+        <div class="engineer-signature">
+            <i class="fas fa-laptop-code"></i>
+            <span class="name">مهندس علي القيسي</span>
+            <i class="fas fa-code"></i>
+        </div>
+    </footer>
+    
+    <script>
+        // حركة الزهور العشوائية
+        document.querySelectorAll('.flower').forEach(flower => {
+            // مواضع عشوائية
+            flower.style.left = `${Math.random() * 100}%`;
+            flower.style.top = `${Math.random() * 100}%`;
+            
+            // تأخيرات مختلفة للحركة
+            flower.style.animationDelay = `${Math.random() * 5}s`;
+        });
+        
+        // تأثيرات عند التمرير
+        window.addEventListener('scroll', () => {
+            const cards = document.querySelectorAll('.quote-card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (cardTop < windowHeight * 0.85) {
+                    card.style.opacity = "1";
+                    card.style.transform = "translateY(0)";
+                }
+            });
+        });
+        
+        // تهيئة أولية للكروت
+        document.querySelectorAll('.quote-card').forEach((card, index) => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(25px)";
+            card.style.transition = `opacity 0.6s ease ${index * 0.2}s, transform 0.6s ease ${index * 0.2}s`;
+        });
+        
+        // بدء التأثيرات بعد تحميل الصفحة
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelectorAll('.quote-card').forEach(card => {
+                    card.style.opacity = "1";
+                    card.style.transform = "translateY(0)";
+                });
+            }, 600);
+        });
+        
+        // تأثيرات إضافية للزهور
+        setInterval(() => {
+            document.querySelectorAll('.flower').forEach(flower => {
+                flower.style.transform = `translateY(${Math.random() * 10 - 5}px) rotate(${Math.random() * 10 - 5}deg)`;
+            });
+        }, 3000);
+        
+        // تأثيرات التوقيع
+        const signature = document.querySelector('.engineer-signature');
+        setInterval(() => {
+            signature.style.textShadow = '0 0 10px rgba(76, 175, 80, 0.7)';
+            setTimeout(() => {
+                signature.style.textShadow = 'none';
+            }, 1000);
+        }, 3000);
+    </script>
+</body>
+</html>
